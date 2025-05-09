@@ -55,14 +55,14 @@
     </ul>
 </li>
 
-     <!--- Admins--->
+     <!--- manager--->
      <li class="nav-item toggle">
-    <a class="nav-link" href="#"><i class="fa fa-users"></i> Admins</a>
+    <a class="nav-link" href="#"><i class="fa fa-users"></i> Managers</a>
 
     <ul class="nav flex-column toggle-list">
         <li class="nav-item">
-            <a href="dashboard.php?page=admin-profile-list" class="nav-link">
-            <i class="fa fa-address-card-o"></i> Admins Profile
+            <a href="dashboard.php?page=manager-profile-list" class="nav-link">
+            <i class="fa fa-address-card-o"></i> Manager Profile
         </a>
         </li>
     </ul>

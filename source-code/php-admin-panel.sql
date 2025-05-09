@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 16, 2023 at 01:01 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: May 09, 2025 at 07:01 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -70,7 +70,20 @@ INSERT INTO `categories` (`id`, `categoryName`, `created_at`, `updated_at`) VALU
 (40, 'category-2', '2023-11-28 15:51:06.383103', '0000-00-00'),
 (41, 'category-3', '2023-11-28 15:51:13.546000', '0000-00-00'),
 (42, 'category-4', '2023-11-28 15:51:20.879156', '0000-00-00'),
-(43, 'category-5', '2023-11-28 15:51:27.085593', '0000-00-00');
+(43, 'category-5', '2023-11-28 15:51:27.085593', '0000-00-00'),
+(45, 'php-admin-panel', '2025-05-09 07:14:37.133138', '0000-00-00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE `category` (
+  `id` int(11) NOT NULL,
+  `food_type` varchar(255) NOT NULL,
+  `quantity` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -93,7 +106,36 @@ CREATE TABLE `content` (
 --
 
 INSERT INTO `content` (`id`, `categoryId`, `title`, `description`, `thumbnail`, `created_at`, `updated_at`) VALUES
-(13, '39', 'What is Lorem Ipsum?', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry', 'backgroundDefault.jpg', '2023-11-28 15:53:46.580379', '0000-00-00');
+(13, '39', 'What is Lorem Ipsum?', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry', 'backgroundDefault.jpg', '2023-11-28 15:53:46.580379', '0000-00-00'),
+(16, '40', ' rg gre', '                 r ergre ae', 'aws password.png', '2025-05-09 07:13:28.473964', '0000-00-00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `managers`
+--
+
+CREATE TABLE `managers` (
+  `id` int(10) NOT NULL,
+  `firstName` varchar(50) NOT NULL,
+  `lastName` varchar(50) NOT NULL,
+  `emailAddress` varchar(50) NOT NULL,
+  `mobileNumber` varchar(20) NOT NULL,
+  `region` enum('Adamawa','Centre','East','Far North','Littoral','North','South','South-West','West','North-West') NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `profileImage` varchar(255) NOT NULL,
+  `created_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
+  `updated_at` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `managers`
+--
+
+INSERT INTO `managers` (`id`, `firstName`, `lastName`, `emailAddress`, `mobileNumber`, `region`, `password`, `profileImage`, `created_at`, `updated_at`) VALUES
+(1, 'Super', 'Manager', 'manager@gmail.com', '692984686', 'Littoral', 'supermanager', 'super-manager.png', '0000-00-00 00:00:00.000000', '0000-00-00'),
+(2, 'test2', 'manager2', 'test2@gmail.com', '698789685', 'Centre', 'test2123', 'Screenshot 2025-01-08 211649.png', '2025-05-09 16:56:21.327955', '0000-00-00'),
+(3, 'test', 'manager', 'test@gmail.com', '69878596', 'South', 'manager123', 'Screenshot 2025-01-09 184016.png', '2025-05-09 10:26:55.233923', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -201,9 +243,21 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `content`
 --
 ALTER TABLE `content`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `managers`
+--
+ALTER TABLE `managers`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -244,13 +298,25 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+
+--
+-- AUTO_INCREMENT for table `category`
+--
+ALTER TABLE `category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `content`
 --
 ALTER TABLE `content`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `managers`
+--
+ALTER TABLE `managers`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `siteidentity`

@@ -70,12 +70,12 @@
             require_once 'views/content/view.php';
           break;
 
-          /* Admin Profile*/
-          case 'admin-profile-list':
-            require_once 'views/admin-profile/table.php';
+          /* manager Profile*/
+          case 'manager-profile-list':
+            require_once 'views/admin-profile/manager_table.php';
           break;
-          case 'admin-profile-form':
-            require_once 'views/admin-profile/form.php';
+          case 'manager-profile-form':
+            require_once 'views/admin-profile/form_manager.php';
           break;
 
             /* site Menu Navigation */

@@ -14,7 +14,7 @@ $profileData = $profile->getProfile();
     </div>
     <div class="col-sm-9">
         <br>
-    <h3><?php echo $profileData['firstName'] . " ". $profileData['lastName'];  ?> </h3>
+    <h3><?php echo $profileData['firstName'] . " ". $profileData['firstName'];  ?> </h3>
     <p><?= $profileData['gender']; ?></p>
     <p><?= $profileData['emailAddress']; ?></p>
     <p><?= $profileData['mobileNumber']; ?></p>
